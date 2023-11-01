@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error404 from "./screens/Error404/Error404";
 import Home from "./screens/Home/Home";
 import { useEffect, useState } from "react";
+import CharacterDetail from "./screens/CharacterDetail/CharacterDetail";
 
 function App() {
   const [characters, setCharacters] = useState(null);//[]
@@ -23,6 +24,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={"/"} element={<Home  characters={characters}/>} />
+        <Route path={"/character/:id"} element={<CharacterDetail/>} />
         <Route path={"*"} element={<Error404 />} />
       </Routes>
     </BrowserRouter>
